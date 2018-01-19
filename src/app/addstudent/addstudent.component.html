@@ -1,0 +1,24 @@
+<hr>
+<div class="container">
+  <form #add="ngForm" (ngSubmit)="addstudent(add.value)">
+    <div class="form-group" [ngClass]="{'has-error':(namee.touched ||namee.dirty)&&(!namee.valid)}">
+      <label>Student Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" #namee="ngModel"
+       placeholder="Enter your name" required/>
+       <span class="help-block" *ngIf="namee.touched && !namee.valid">
+         <span *ngIf="namee.errors.required"> You have not entered the name</span>
+       </span>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error':(collegee.touched ||collegee.dirty)&&(!collegee.valid)}">
+      <label>College Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="college" name="college" #collegee="ngModel" 
+      placeholder="Enter your college" required/>
+      <span class="help-block" *ngIf="collegee.touched && !collegee.valid">
+        <span *ngIf="collegee.errors.required"> You have not entered the college name</span>
+      </span>
+    </div>
+    <br>
+    <button class="btn btn-primary" [disabled]="!add.valid">Submit</button>
+    <button class="btn btn-danger" [routerLink]="['/students']">Cancel</button>
+  </form>
+</div>

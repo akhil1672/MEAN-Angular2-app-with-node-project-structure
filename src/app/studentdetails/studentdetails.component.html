@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:40px"></span>
+  <h2>Student details</h2>
+  <div class="container well" style="background-color:rgba(111, 245, 238, 0.842)">
+    <h5>
+      <hr>
+      <label>Student name: </label> {{student?.name}}
+      <br>
+      <label>Student college: </label> {{student?.college|uppercase}}
+      <br>
+      <hr>
+    </h5>
+  </div>
+  <button class="btn btn-success" [routerLink]="['/students']">Back to Students page</button>
+  <button class="btn btn-danger" (click)="delete(student.name)">Delete Student</button>
+</div>
+
+<hr>
+
+<!-- <div class="jumbotron">
+  <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:40px"></span>
+  <h2>Student details</h2>
+  <div class="container well" style="background-color:rgba(111, 245, 238, 0.842)">
+    <h5>
+      <form #update="ngForm" novalidate (ngSubmit)="update(update.value)">
+      <hr>
+      <label>Student name: </label> 
+      <input type="text" class="form-control" [(ngModel)]="Student.name" name="name" #namee="ngModel" placeholder="Enter your name" required/>
+      <span class="help-block" *ngIf="namee.touched && !namee.valid">
+        <span *ngIf="namee.errors.required"> You have not entered the name</span>
+      </span>
+      <br>
+      <label>Student college: </label> 
+      <input type="text" class="form-control" [(ngModel)]="Student.college" name="college" #collegee="ngModel" placeholder="Enter your college"
+        required/>
+      <span class="help-block" *ngIf="collegee.touched && !collegee.valid">
+        <span *ngIf="collegee.errors.required"> You have not entered the college name</span>
+      </span>
+      <br>
+      <hr>
+      </form>
+    </h5>
+  </div>
+  <button class="btn btn-success" [routerLink]="['/students']">Back to Students page</button>
+  <button class="btn btn-danger" [disabled]="!update.valid">Update Student</button>
+</div> -->

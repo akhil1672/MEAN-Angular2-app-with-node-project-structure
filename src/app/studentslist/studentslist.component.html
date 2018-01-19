@@ -1,0 +1,17 @@
+<hr>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>College</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students" [routerLink]="['/students',student.name]" (click)="selectStudent(student)">
+      <td>{{student.name}}</td>
+      <td>{{student.college}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary" [routerLink]="['/addstudent']">Add Student</button>
