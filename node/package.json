@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node index",
+    "test:coverage": "nyc --reporter=html --reporter=text mocha ./test/**/*.test.js "
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,17 @@
     "mongodb": "^2.2.33",
     "nodemon": "^1.14.11",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.1.0",
+    "mocha-junit-reporter": "^1.15.0",
+    "nock": "^9.1.6",
+    "nyc": "^11.4.1",
+    "should": "^13.2.0",
+    "supertest": "^3.0.0"
   }
 }
